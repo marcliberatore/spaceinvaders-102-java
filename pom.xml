@@ -4,7 +4,7 @@
 
   <groupId>marcliberatore</groupId>
   <artifactId>spaceinvaders-java-102</artifactId>
-  <version>1.0.0-SNAPSNOR</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>spaceinvaders-java-102</name>
