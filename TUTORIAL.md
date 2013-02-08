@@ -1,5 +1,3 @@
-From <http://www.cokeandcode.com/info/tut2d-2.html>:
-
 # Space Invaders 102: Timing and Animation in Java
 
 Adapted from: <http://www.cokeandcode.com/info/tut2d-2.html>
