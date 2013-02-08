@@ -43,7 +43,7 @@ While this doesn't give perfect results, it does give "good" results. It's not r
 
 ## Wait for Java 1.5
 
-**A Note from Marc:** This discussion that follows is no longer relevant, as Java 1.5 (and later) are now in wide release. (To be fair, the tutorial was written about ten years ago!) You should almost certainly use `System.nanoTime()`, and possibly the averaging technique described above, unless you're using a library which handles this for you. [LWJGL]'s `Sys` class provides static methods that work well across platforms. You should use it if you're using LWJGL.
+**A note from Marc:** This discussion that follows is no longer relevant, as Java 1.5 (and later) are now in wide release. (To be fair, the tutorial was written about ten years ago!) You should almost certainly use `System.nanoTime()`, and possibly the averaging technique described above, unless you're using a library which handles this for you. [LWJGL]'s `Sys` class provides static methods that work well across platforms. You should use it if you're using LWJGL.
 
 [LWJGL]:http://www.lwjgl.org/
 
@@ -180,7 +180,7 @@ So, as time passes our lastFrameChange counter will get updated. Once it's passe
 
 # Finishing Off
 
-Hopefully this tutorial has been of some help. While I recommend using the GAGE timer (**which is no longer supported, hence use of System.nanoTime() -- Marc) the other methods and other native libraries have been used by a great number of people and are probably just as good. It's worth looking around and choosing the method that suits your need and methods best. 
+Hopefully this tutorial has been of some help. While I recommend using the GAGE timer (**which is no longer supported, hence use of System.nanoTime() -- Marc**) the other methods and other native libraries have been used by a great number of people and are probably just as good. It's worth looking around and choosing the method that suits your need and methods best. 
 
 # Exercises for the Reader
 
