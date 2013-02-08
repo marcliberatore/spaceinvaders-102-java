@@ -1,46 +1,34 @@
 package org.newdawn.spaceinvaders;
 
-import com.dnsalias.java.timer.AdvancedTimer;
-
 /**
  * A wrapper class that provides timing methods. This class
  * provides us with a central location where we can add
  * our current timing implementation. Initially, we're going to
  * rely on the GAGE timer. (@see http://java.dnsalias.com)
  * 
+ * 2013-02-07: I've replaced the no-longer-available GAGE timer
+ * with System.nanoTime(), since that is now widely available.
+ * --- Marc Liberatore
+ * 
  * @author Kevin Glass
  */
 public class SystemTimer {
-	/** Our link into the GAGE timer library */
-	private static AdvancedTimer timer = new AdvancedTimer();
-	/** The number of "timer ticks" per second */
-	private static long timerTicksPerSecond;
-	
-	/** A little initialisation at startup, we're just going to get the GAGE timer going */
-	static {
-		timer.start();
-		timerTicksPerSecond = AdvancedTimer.getTicksPerSecond();
-	}
-	
 	/**
 	 * Get the high resolution time in milliseconds
 	 * 
 	 * @return The high resolution time in milliseconds
 	 */
 	public static long getTime() {
-		// we get the "timer ticks" from the high resolution timer
-		// multiply by 1000 so our end result is in milliseconds
-		// then divide by the number of ticks in a second giving
-		// us a nice clear time in milliseconds
-		return (timer.getClockTicks() * 1000) / timerTicksPerSecond;
+		return System.nanoTime() / 1000000L;
 	}
 	
 	/**
 	 * Sleep for a fixed number of milliseconds. 
 	 * 
 	 * @param duration The amount of time in milliseconds to sleep for
+	 * @throws InterruptedException 
 	 */
-	public static void sleep(long duration) {
-		timer.sleep((duration * timerTicksPerSecond) / 1000);
+	public static void sleep(long duration) throws InterruptedException {
+		Thread.sleep(java.lang.Math.max(0L,duration));
 	}
 }

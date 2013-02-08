@@ -241,8 +241,9 @@ public class Game extends Canvas {
 	 * - Updating game events
 	 * - Checking Input
 	 * <p>
+	 * @throws InterruptedException 
 	 */
-	public void gameLoop() {
+	public void gameLoop() throws InterruptedException {
 		long lastLoopTime = SystemTimer.getTime();
 		
 		// keep looping round til the game ends
@@ -458,8 +459,9 @@ public class Game extends Canvas {
 	 * loop.
 	 * 
 	 * @param argv The arguments that are passed into our game
+	 * @throws InterruptedException 
 	 */
-	public static void main(String argv[]) {
+	public static void main(String argv[]) throws InterruptedException {
 		Game g = new Game();
 
 		// Start the main game loop, note: this method will not
